@@ -1,0 +1,23 @@
+body {margin:0;}
+
+
+.container {max-width: 800px; margin: 0 auto; font-family: helvetica;}
+
+.plots-wrap {margin:200px 0 0 0; overflow: auto;}
+	.plots-wrap ul {}
+	.plots-wrap ul li {height: 40px; width:40px; float: left; background: #ccc; margin:0 4px; cursor: pointer; font-size:14px;}
+
+
+.list-wrap {max-height:400px; margin: 60px 0 0 0; overflow: scroll; clear: both; position: relative;}
+	.list-wrap ul {}
+	.list-wrap ul li {height:100px; width:100%; background: #ccc; margin:0 0 4px 0; transition: all 1s ease;} 
+	.list-wrap ul li.active {background: pink;}
+
+#no-scroll {height: 100%; width:70%; position: absolute; top: 0; left:0; background: rgba(0,0,0,0.2);}
+#allow-scroll {height:100px; width: 30%; position: absolute; top:0; right:0; background: rgba(1,1,1,02);}
+
+
+
+
+
+

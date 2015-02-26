@@ -1,0 +1,199 @@
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="icomoon.css">
+     <link rel="stylesheet" type="text/css" href="styles.css">
+     <script src="jquery-1.11.2.min.js"></script>
+</head> 
+<body>
+
+<form>
+What is the current average rating <br>
+<input class="input-average-rating" type="number" min="1" max="5" step="1" value="3" name="average-rating">
+<br>
+How many peopl have voted<br>
+<input class="input-number-votes" type="number" min="1" max="99" step="1" value="50" name="number-votes">
+</form>
+
+<div id="feedback" class="">
+    <div class="bad">Please send us feedback on how we can better service you in the future</div>
+    <div class="good">Glad you enjoyed our product, help us improve</div>
+    <div class="great">high fives, tell your friends for discounts</div>
+</div>
+<div class="star-contain">
+    <div class="disabled-container"></div>
+    <div  class="percent-you-like"><div class="number"></div><div class="reaction">:(:</div>  </div>
+    <div  class="overall-rating">Rating: <span class="average-rating">1</span> - <span class="average-votes">10</span> reviews</div> 
+    <span class="stars background-stars"  data-content=""></span>
+    
+    <span class="stars current-rating" data-content="" style=""></span>
+    <span class="stars your-rating" data-content=""></span>
+</div>
+
+
+
+
+<script>
+
+(function( $ ){
+
+    var StarRatings;
+
+    StarRatings = {
+
+
+        var starContainer  = $('.star-contain'),
+            offset         = starContainer.offset,
+            startWidth     = starContainer.width(),
+            percentYouLike = $('.percent-you-like'),
+             
+
+
+
+
+    }
+
+
+})( jQuery );
+
+
+
+/*
+function starAction(){
+
+var starCont = $('.star-contain');
+var offset = starCont.offset();
+var starW = starCont.width();
+var percentYouLike =   $('.percent-you-like');
+
+// change percentage into fraction
+var x = $('.current-rating').css('width');
+var currentRating = parseInt(x, 10); 
+
+// vars that will be coming from the DB - for presentation only
+inputAverageRating = $('.input-average-rating').val();
+inputNumberVotes = $('.input-number-votes').val();
+
+
+
+changeNumbersFromDB();
+mouseHoveringStars();   
+mouseDownonStars();
+
+
+
+
+// TEMP FUNCTION TO FAKE NUMBERS COMING FROM DB
+function changeNumbersFromDB(){ 
+    $( "form" ).change(function() {
+
+        // var inputAverageRating = $('.input-average-rating').val();
+        // var inputNumberVotes = $('.input-number-votes').val();
+
+        inputAverageRating = $('.input-average-rating').val();
+        inputNumberVotes =  $('.input-number-votes').val();
+
+        $('.current-rating').css('width', inputAverageRating * 32);
+        $('.average-rating').text(inputAverageRating);
+        $('.average-votes').text(inputNumberVotes);
+    }).change(); 
+}
+
+
+
+// ANYTHING THAT HAPPENS WHILE HOVERING OVER STARS
+function mouseHoveringStars(){
+    $(starCont).mousemove(function(e){
+        var fromLeft = e.pageX;
+        inStarCont = fromLeft - offset.left;
+        var hoverPercent = parseInt((inStarCont / starW) * 100);
+        var userFraction = (hoverPercent / 10.0) / 2;
+        test = userFraction.toFixed(1); //fix this LJM
+        
+
+        $('.number').text( test );
+        $(percentYouLike).css( 'left', inStarCont );
+        $('.your-rating').css('width', inStarCont);
+
+
+        var rotate = hoverPercent -220; //needs to rotate a little more - LJM
+        $('.reaction').css('transform','rotate('+rotate+'deg)');
+
+
+        // the idea here was to possibly change the color of the highlighted hover, didn't really work out 
+        if (currentRating > inStarCont){
+            $('.your-rating').css({'background-color': 'white', 'opacity' : '.5'});
+        }
+        else{
+            $('.your-rating').css({'background-color': 'white', 'opacity' : '.4'});
+        }
+
+
+        $(starCont).mouseout(function(){
+            // $( '.your-rating').css('width', 0);
+            i = 0;
+            if(i < inStarCont){
+              // $('.percent-you-like').text(0); 
+              i++;
+            } 
+        });
+    });     
+}    
+
+
+
+
+
+//WHEN YOU CLICK ON THE STARS UPDATE VALUES
+    function mouseDownonStars() {
+        $(starCont).mousedown(function(e){
+             if(test < 3){
+                $('#feedback').removeClass();
+                $('#feedback').addClass('feedback-bad on');
+            }
+
+            else if(test < 4){
+                $('#feedback').removeClass();
+                $('#feedback').addClass('feedback-good on');
+            }
+            else{
+                $('#feedback').removeClass();
+                $('#feedback').addClass('feedback-great on');
+            }
+
+
+            // calculate the new star rating average
+            // currentAddedUp = inputAverageRating * inputNumberVotes;
+            // console.log(currentAddedUp);
+            // update numberof ratings
+
+            var newNumberofRaters = parseInt(inputNumberVotes) + 1;
+            $('.average-votes').text(newNumberofRaters);
+
+            finalRating = (inputAverageRating) / (newNumberofRaters)
+
+
+            console.log('input Average Rating = ' + inputAverageRating);
+            console.log('new Number of Raters = ' + newNumberofRaters);
+            console.log('your rating = ' + finalRating);
+            console.log('in StarCont = ' + inStarCont);
+
+
+            // update new average rating including current customers
+            $('.average-rating').text(inputAverageRating);
+            $('.current-rating').css('width', inStarCont);
+
+            $(starCont).addClass('disabled');
+            $('.overall-rating').addClass('highlight');
+         });
+        
+    }
+
+}
+
+
+starAction();
+
+*/
+</script>
+</body>
+</html>
